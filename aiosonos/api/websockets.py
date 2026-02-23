@@ -38,6 +38,7 @@ from aiosonos.exceptions import (
     InvalidState,
     NotConnected,
 )
+from aiosonos.utils import create_ssl_context
 
 from ._base import AbstractSonosApi
 
@@ -150,7 +151,7 @@ class SonosLocalWebSocketsApi(AbstractSonosApi):
                 compress=15,
                 max_msg_size=0,
                 headers=headers,
-                ssl=ssl.SSLContext(ssl.PROTOCOL_TLSv1_2),
+                ssl=create_ssl_context(),
             )
         except (
             client_exceptions.WSServerHandshakeError,
