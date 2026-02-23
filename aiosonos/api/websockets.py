@@ -20,7 +20,6 @@ from __future__ import annotations
 
 import asyncio
 import pprint
-import ssl
 import uuid
 from typing import TYPE_CHECKING, Any
 
